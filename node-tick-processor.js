@@ -1,12 +1,16 @@
 print = console.log;
 var arguments = process.argv;
+
+var v8log = require('fs').readFileSync('./v8.log').toString('binary');
+var lines = v8log.split('\n');
+var l = 0;
 var readline = function()
 {
-    return "code-creation,LoadIC,0x2cb9c460,59,\"ScriptMirror\"";
+    if (l == lines.length)
+        return;
+    l++;
+    return lines[l];
 }
-
-
-
 
 //=======================================================================================================================================
 // code below is result of
