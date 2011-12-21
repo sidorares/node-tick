@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 print = console.log;
 var arguments = process.argv;
 
