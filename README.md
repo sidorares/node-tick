@@ -8,7 +8,7 @@ Allows you to profile V8-based programs without installing V8 from source.
 
 See [V8 profiler page](http://code.google.com/p/v8/wiki/V8Profiler) for basic introduction to v8.log
 
-	$ node profile yourprogram
+	$ node --prof yourprogram
 	$ node-tick-processor
 
 ### See also
