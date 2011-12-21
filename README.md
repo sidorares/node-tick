@@ -4,9 +4,13 @@ Allows you to profile V8-based programs without installing V8 from source.
 ### Install
 	$ npm install tick
 
-== Usage
+### Usage
 
-See http://code.google.com/p/v8/wiki/V8Profiler for basic introduction to v8.log
+See [V8 profiler page](http://code.google.com/p/v8/wiki/V8Profiler) for basic introduction to v8.log
 
 	$ node profile yourprogram
 	$ node-tick-processor
+
+### See also
+
+`takeSnapshot` & `startProfiling` & `stopProfiling` V8 profiler API exposed to node.js: [v8-profiler](https://github.com/dannycoates/v8-profiler)
