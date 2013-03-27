@@ -1,0 +1,8 @@
+0.0.2
+  - it's now possible to use large files (previous version filed on 5Gb
+    example). readableStream is used now instead of 'read all & split'
+  - fixe for argument parser initialisation. log & snapshot file name
+    and other options work now
+  - separate source files `require`d instead of joining all sources into
+    single bundle
+  - scripts updated from V8 3.14.5
