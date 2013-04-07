@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var tickprocessor = require('./tickprocessor');
+var tickprocessor = require('../lib/tickprocessor');
 var ArgumentsProcessor = tickprocessor.ArgumentsProcessor;
 var TickProcessor = tickprocessor.TickProcessor;
 var SnapshotLogProcessor = tickprocessor.SnapshotLogProcessor;
