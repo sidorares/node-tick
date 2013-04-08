@@ -1,6 +1,6 @@
 {
   "name": "tick",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "node-compatible v8.log processor",
   "homepage": "http://github.com/sidorares/node-tick",
   "author": "Andrey Sidorov <sidorares@yandex.ru>",
