@@ -2,7 +2,7 @@ v8.log processor based on scripts in v8 distribution.
 Allows you to profile V8-based programs without installing V8 from source.
 
 ### Install
-	$ npm install tick
+	$ npm install -g tick
 
 ### Usage
 
