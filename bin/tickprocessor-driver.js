@@ -53,7 +53,7 @@ var entriesProviders = {
 var params = processArguments(process.argv.slice(2));
 var snapshotLogProcessor;
 if (params.snapshotLogFileName) {
-  snapshotLogProcessor = new SnapshotLogProcessor();
+  snapshotLogProcessor = new SnapshotLogProcessor(params.ignoreUnknown);
   snapshotLogProcessor.processLogFile(params.snapshotLogFileName, processTicks);
 }
 
