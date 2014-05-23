@@ -1,3 +1,6 @@
+0.0.6
+  - --ignore-unknown flag
+
 0.0.2
   - it's now possible to use large files (previous version filed on 5Gb
     example). readableStream is used now instead of 'read all & split'
