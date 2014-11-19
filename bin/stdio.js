@@ -61,14 +61,12 @@ function log_error(text) {
   quit(1);
 }
 var psc = new PlotScriptComposer(kResX, kResY, log_error);
-var fileLines = [];
+var collector = psc.collectData(distortion_per_entry);
+
 processFileLines(result.logFileName, function(readline) {
-    fileLines.push(readline);
+    collector.processLine(readline);
 }, function() {
-    var cnt = 0;
-    psc.collectData(function() {
-        return fileLines[cnt++];
-    }, distortion_per_entry);
+    collector.onDone();
 
     psc.findPlotRange(range_start_override, range_end_override);
     console.log("set terminal pngcairo size " + kResX + "," + kResY +
