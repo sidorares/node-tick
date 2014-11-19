@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-var tickprocessor = require('../lib/tickprocessor');
-var ArgumentsProcessor = tickprocessor.ArgumentsProcessor;
-var TickProcessor = tickprocessor.TickProcessor;
-var SnapshotLogProcessor = tickprocessor.SnapshotLogProcessor;
+var tickProcessorModule = require('../lib/tickprocessor');
+var ArgumentsProcessor = tickProcessorModule.ArgumentsProcessor;
+var TickProcessor = tickProcessorModule.TickProcessor;
+var SnapshotLogProcessor = tickProcessorModule.SnapshotLogProcessor;
 
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
@@ -45,9 +45,9 @@ function processArguments(args) {
 }
 
 var entriesProviders = {
-  'unix': tickprocessor.UnixCppEntriesProvider,
-  'windows': tickprocessor.WindowsCppEntriesProvider,
-  'mac': tickprocessor.MacCppEntriesProvider
+  'unix': tickProcessorModule.UnixCppEntriesProvider,
+  'windows': tickProcessorModule.WindowsCppEntriesProvider,
+  'mac': tickProcessorModule.MacCppEntriesProvider
 };
 
 var params = processArguments(process.argv.slice(2));

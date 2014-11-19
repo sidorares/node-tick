@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-var tickprocessor = require('../lib/tickprocessor');
+var tickProcessorModule = require('../lib/tickprocessor');
 var composer = require('../lib/composer');
-var ArgumentsProcessor = tickprocessor.ArgumentsProcessor;
-var TickProcessor = tickprocessor.TickProcessor;
-var SnapshotLogProcessor = tickprocessor.SnapshotLogProcessor;
+var ArgumentsProcessor = tickProcessorModule.ArgumentsProcessor;
+var TickProcessor = tickProcessorModule.TickProcessor;
+var SnapshotLogProcessor = tickProcessorModule.SnapshotLogProcessor;
 var PlotScriptComposer = composer.PlotScriptComposer;
-var processFileLines = tickprocessor.processFileLines;
+var processFileLines = tickProcessorModule.processFileLines;
 
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
