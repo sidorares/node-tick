@@ -1,3 +1,8 @@
+0.1.0
+  - LogProcessor now tries to giess v8.log format and it shoukd handle
+	profiles from both node 0.10.x and 0.11.x
+	- added timeline gnuplot script generation
+
 0.0.6
   - --ignore-unknown flag
 
