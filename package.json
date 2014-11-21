@@ -19,7 +19,7 @@
     "node": ">=0.4.0"
   },
   "bin": {
-    "node-tick-processor": "./bin/tickprocessor-driver.js"
+    "node-tick-processor": "./bin/tickprocessor-driver.js",
     "plot-timer-events":   "./bin/stdio.js"
   },
   "dependencies": {
