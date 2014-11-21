@@ -1,11 +1,14 @@
 #!/usr/bin/env node
 
 var tickProcessorModule = require('../lib/tickprocessor');
+var composer = require('../lib/composer');
 var ArgumentsProcessor = tickProcessorModule.ArgumentsProcessor;
 var TickProcessor = tickProcessorModule.TickProcessor;
 var SnapshotLogProcessor = tickProcessorModule.SnapshotLogProcessor;
+var PlotScriptComposer = composer.PlotScriptComposer;
+var processFileLines = tickProcessorModule.processFileLines;
 
-// Copyright 2012 the V8 project authors. All rights reserved.
+// Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
 // met:
@@ -32,40 +35,41 @@ var SnapshotLogProcessor = tickProcessorModule.SnapshotLogProcessor;
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+var args = process.argv.slice(2);
 
-// Tick Processor's code flow.
+var processor = new ArgumentsProcessor(args);
+var distortion_per_entry = 0;
+var range_start_override = undefined;
+var range_end_override = undefined;
 
-function processArguments(args) {
-  var processor = new ArgumentsProcessor(args);
-  if (processor.parse()) {
-    return processor.result();
-  } else {
-    processor.printUsageAndExit();
-  }
+if (!processor.parse()) processor.printUsageAndExit();
+var result = processor.result();
+var distortion = parseInt(result.distortion);
+if (isNaN(distortion)) processor.printUsageAndExit();
+// Convert picoseconds to milliseconds.
+distortion_per_entry = distortion / 1000000;
+var rangelimits = result.range.split(",");
+var range_start = parseInt(rangelimits[0]);
+var range_end = parseInt(rangelimits[1]);
+if (!isNaN(range_start)) range_start_override = range_start;
+if (!isNaN(range_end)) range_end_override = range_end;
+
+var kResX = 1600;
+var kResY = 700;
+function log_error(text) {
+  console.error(text);
+  quit(1);
 }
+var psc = new PlotScriptComposer(kResX, kResY, log_error);
+var collector = psc.collectData(distortion_per_entry);
 
-var entriesProviders = {
-  'unix': tickProcessorModule.UnixCppEntriesProvider,
-  'windows': tickProcessorModule.WindowsCppEntriesProvider,
-  'mac': tickProcessorModule.MacCppEntriesProvider
-};
+processFileLines(result.logFileName, function(readline) {
+    collector.processLine(readline);
+}, function() {
+    collector.onDone();
 
-var params = processArguments(process.argv.slice(2));
-var snapshotLogProcessor;
-if (params.snapshotLogFileName) {
-  snapshotLogProcessor = new SnapshotLogProcessor(params.ignoreUnknown);
-  snapshotLogProcessor.processLogFile(params.snapshotLogFileName, processTicks);
-}
-
-function processTicks() {
-  var tickProcessor = new TickProcessor(
-    new (entriesProviders[params.platform])(params.nm, params.targetRootFS),
-    params.separateIc,
-    params.callGraphSize,
-    params.ignoreUnknown,
-    params.stateFilter,
-    snapshotLogProcessor);
-  tickProcessor.processLogFile(params.logFileName, tickProcessor.printStatistics.bind(tickProcessor));
-}
-
-processTicks();
+    psc.findPlotRange(range_start_override, range_end_override);
+    console.log("set terminal pngcairo size " + kResX + "," + kResY +
+    " enhanced font 'Helvetica,10'");
+    psc.assembleOutput(console.log);
+});
