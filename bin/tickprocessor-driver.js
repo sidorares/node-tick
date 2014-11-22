@@ -64,7 +64,10 @@ function processTicks() {
     params.callGraphSize,
     params.ignoreUnknown,
     params.stateFilter,
-    snapshotLogProcessor);
+    snapshotLogProcessor,
+    params.distortion,
+    params.range,
+    params.sourceMap);
   tickProcessor.processLogFile(params.logFileName, tickProcessor.printStatistics.bind(tickProcessor));
 }
 
