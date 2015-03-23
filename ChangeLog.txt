@@ -1,5 +1,5 @@
 0.1.0
-  - LogProcessor now tries to giess v8.log format and it shoukd handle
+  - LogProcessor now tries to giess v8.log format and it should handle
 	profiles from both node 0.10.x and 0.11.x
 	- added timeline gnuplot script generation
 
@@ -7,7 +7,7 @@
   - --ignore-unknown flag
 
 0.0.2
-  - it's now possible to use large files (previous version filed on 5Gb
+  - it's now possible to use large files (previous version failed on 5Gb
     example). readableStream is used now instead of 'read all & split'
   - fixe for argument parser initialisation. log & snapshot file name
     and other options work now
