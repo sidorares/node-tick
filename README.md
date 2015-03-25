@@ -22,6 +22,7 @@ See [V8 profiler page](http://code.google.com/p/v8/wiki/V8Profiler) for basic in
  - [Trevor Norris notes](https://gist.github.com/trevnorris/6fea5ab2632dff8b5b25#file-perf-training-syllabus-md)
  - [V8 optimisations killers](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
  - [I-want-to-optimize-my-JS-application-on-V8 checklist](http://mrale.ph/blog/2011/12/18/v8-optimization-checklist.html) ( + [another listlist](http://mrale.ph/v8/resources.html) ) by <a href="https://github.com/mraleph" class="user-mention">@mraleph</a>
+ - https://github.com/thlorenz/iojs-inspect-entire-stack
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sidorares/node-tick/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
