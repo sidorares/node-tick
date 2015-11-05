@@ -4,6 +4,7 @@
   "description": "node-compatible v8.log processor",
   "homepage": "http://github.com/sidorares/node-tick",
   "author": "Andrey Sidorov <sidorares@yandex.ru>",
+  "license": "MIT",
   "keywords": [
     "v8.log",
     "profiler",
