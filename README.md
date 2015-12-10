@@ -1,7 +1,7 @@
 v8.log processor based on scripts in v8 distribution. 
 Allows you to profile V8-based programs without installing V8 from source.
 
-Note that starting from version v5.2.0 node has v8.log processor budled - see [#node/4021](https://github.com/nodejs/node/pull/4021). To use it, type `node --prof-process`
+Note that starting from version v5.2.0 node distribution includes v8.log processor - see [#node/4021](https://github.com/nodejs/node/pull/4021). To use it, type `node --prof-process`
 
 ### Install
 	$ npm install -g tick
