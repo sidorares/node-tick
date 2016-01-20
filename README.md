@@ -8,7 +8,7 @@ Note that starting from version v5.2.0 node distribution includes v8.log process
 
 ### Usage
 
-See [V8 profiler page](http://code.google.com/p/v8/wiki/V8Profiler) for basic introduction to v8.log
+See [V8 profiler page](https://github.com/v8/v8/wiki/V8%20Profiler) for basic introduction to v8.log
 
 	$ node --prof yourprogram
 	$ node-tick-processor
