@@ -25,4 +25,4 @@ See [V8 profiler page](https://github.com/v8/v8/wiki/V8%20Profiler) for basic in
  - [V8 optimisations killers](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
  - [I-want-to-optimize-my-JS-application-on-V8 checklist](http://mrale.ph/blog/2011/12/18/v8-optimization-checklist.html) ( + [another listlist](http://mrale.ph/v8/resources.html) ) by <a href="https://github.com/mraleph" class="user-mention">@mraleph</a>
  - https://github.com/thlorenz/iojs-inspect-entire-stack
-
+ - [v8 bailout reasons explained](https://github.com/vhf/v8-bailout-reasons)
