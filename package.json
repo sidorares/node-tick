@@ -24,6 +24,6 @@
     "plot-timer-events": "./bin/stdio.js"
   },
   "dependencies": {
-    "byline": "~2.0.3"
+    "byline": "~5.0.0"
   }
 }
