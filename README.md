@@ -4,6 +4,8 @@ Allows you to profile V8-based programs without installing V8 from source.
 Note that starting from version v5.2.0 node distribution includes v8.log processor - see [#node/4021](https://github.com/nodejs/node/pull/4021). To use it, type `node --prof-process`
 
 ### Install
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/sidorares/node-tick.svg)](https://greenkeeper.io/)
 	$ npm install -g tick
 
 ### Usage
